@@ -164,11 +164,16 @@ class MxGenerator extends Generator {
                 `src/ui/styles.${this.widget.fileExtension}`
             );
         }
+
+        if (this.widget.isPlatformNative && this.widget.isLanguageTS) {
+            this._copyFile("commons/react-native-compat.d.ts", "typings/react-native-compat.d.ts");
+        }
     }
 
     _writeCompilerOptions() {
         if (this.widget.isLanguageTS) {
             this._copyFile("commons/tsconfig.json", "tsconfig.json");
+            this._copyFile("commons/react-jsx.d.ts", "typings/react-jsx.d.ts");
         }
     }
 

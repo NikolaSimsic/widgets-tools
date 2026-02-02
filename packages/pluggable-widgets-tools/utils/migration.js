@@ -19,9 +19,9 @@ const dependencies = [
     { name: "react-dom", version: "remove", check: CheckType.MAJOR_MINOR },
     { name: "react-native", version: "remove", check: CheckType.MINOR },
     { name: "@types/jest", version: "^29.0.0", check: CheckType.MAJOR },
-    { name: "@types/react", version: "remove", check: CheckType.MAJOR },
+    { name: "@types/react", version: "~19.0.12", check: CheckType.MAJOR_MINOR },
     { name: "@types/react-native-push-notification", version: "8.1.1", check: CheckType.MAJOR_MINOR },
-    { name: "@types/react-dom", version: "remove", check: CheckType.MAJOR },
+    { name: "@types/react-dom", version: "~19.0.0", check: CheckType.MAJOR_MINOR },
     { name: "@types/react-test-renderer", version: "19.0.0", check: CheckType.MAJOR },
     { name: "@types/enzyme-adapter-react-16", version: "remove", check: CheckType.MAJOR },
     { name: "@react-native-firebase/app", version: "17.3.0", check: CheckType.MAJOR_MINOR },
@@ -53,11 +53,7 @@ const reactNativePackage = { version: "0.78.2", check: CheckType.MINOR };
 const resolutionsOverrides = [
     { name: "react", ...reactPackage },
     { name: "react-dom", ...reactDomPackage },
-    { name: "react-native", ...reactNativePackage },
-    { name: "@types/react", ...reactPackage },
-    { name: "@types/react-dom", ...reactDomPackage },
-    // Note: @types/react-native removed - React Native 0.78.2 has built-in TypeScript types
-    { name: "@types/react-native", ...reactNativePackage }
+    { name: "react-native", ...reactNativePackage }
 ];
 
 function extractVersions(version) {
@@ -176,7 +172,7 @@ async function getExtraDependencies(packageJson, key) {
 
     let extraDependencies = resolutionsOverrides.filter(ov => !packageJson[key] || !packageJson[key][ov.name]);
     if (!supportedPlatforms.includes("Native"))
-        extraDependencies = extraDependencies.filter(d => d.name !== "react-native" && d.name !== "@types/react-native")
+        extraDependencies = extraDependencies.filter(d => d.name !== "react-native")
     if (!supportedPlatforms.includes("Web"))
         extraDependencies = extraDependencies.filter(d => d.name !== "react-dom" && d.name !== "@types/react-dom");
 

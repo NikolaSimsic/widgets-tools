@@ -2,7 +2,8 @@
   "extends": "@mendix/pluggable-widgets-tools/configs/tsconfig.base",
   "compilerOptions": {
     "baseUrl": "./",
-    "types": ["jest", "node", "react", "react-dom"]
+    "types": ["jest", "node", "react", "react-dom"],
+    "typeRoots": ["./node_modules/@types", "./typings"]
   },
   "include": ["./src", "./typings"]
 }

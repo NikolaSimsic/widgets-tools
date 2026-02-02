@@ -230,8 +230,7 @@ export default async args => {
                     inlineSources: config.sourceMaps,
                     target: "es2022", // we transpile the result with babel anyway, see below
                     exclude: ["**/__tests__/**/*"],
-                    skipLibCheck: true,
-                    noCheck: true
+                    skipLibCheck: true
                 })
                 : null,
             // Babel can transpile source JS and resulting JS, hence are input/output plugins. The good
