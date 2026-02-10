@@ -16,6 +16,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 -   We now enforce the same validation for the `widgetName` in the widget bundler as we do in the generator. Validation is now also enforced for the organization name (`packagePath`).
 
+## [11.4.0] - 2026-02-01
+
+### Changed
+
+-   We updated React Native to version 0.78.2 to align with the Native Widgets project requirements.
+
 ## [11.3.0] - 2025-11-12
 
 ### Changed

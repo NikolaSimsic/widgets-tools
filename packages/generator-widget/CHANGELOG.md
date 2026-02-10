@@ -14,12 +14,15 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 -   We now enforce validation when choosing an organization name for a widget.
 
-## [10.24.0] - 2025-09-24
+## [10.25.0] - 2026-02-01
 
 ### Changed
 
 -   We upgraded React Native to version 0.78.2 for generated widgets.
 
+## [10.24.0] - 2025-09-24
+
+### Changed
 -   We updated the required Node.js version to 20 or newer for the generator and generated widget projects.
 
 -   We switched from Enzyme to React Native Testing Library for generated widget tests.
